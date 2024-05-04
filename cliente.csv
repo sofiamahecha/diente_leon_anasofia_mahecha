@@ -1,0 +1,11 @@
+idCliente,nombre_cliente,telefono_cliente,correo_cliente
+1,Juan,123456789,juan@example.com
+2,María,987654321,maria@example.com
+3,Carlos,555555555,carlos@example.com
+4,Laura,111111111,laura@example.com
+5,Pablo,999999999,pablo@example.com
+6,Ana,666666666,ana@example.com
+7,Andrés,444444444,andres@example.com
+8,Sofía,222222222,sofia@example.com
+9,Daniel,888888888,daniel@example.com
+10,Lucía,333333333,lucia@example.com
