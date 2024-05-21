@@ -1,6 +1,6 @@
 use diente_leon;
 create table log_audit(
-id int primary key AUTO_INCREMENT
+id int primary key AUTO_INCREMENT,
 usuario varchar(50),
 accion varchar(50),
 fecha_accion date,
