@@ -1,3 +1,4 @@
+use diente_leon;
 DELIMITER $$ 
 CREATE FUNCTION fn_nombre(parametro_nombre tipo_de_dato (longitud))
 returns tipo_de_dato

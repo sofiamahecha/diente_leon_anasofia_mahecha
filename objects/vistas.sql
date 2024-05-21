@@ -1,3 +1,4 @@
+use diente_leon;
 CREATE OR REPLACE VIEW buscar_canal_13 AS
     SELECT 
         canal.idCanal AS idCanal, canal.tipo_canal AS tipo_canal

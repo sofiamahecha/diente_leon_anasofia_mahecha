@@ -1,3 +1,4 @@
+use diente_leon;
 create table log_audit(
 id int primary key AUTO_INCREMENT
 usuario varchar(50),
