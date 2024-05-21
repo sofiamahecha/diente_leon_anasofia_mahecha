@@ -45,3 +45,13 @@ LOAD DATA LOCAL INFILE './structure/data-csv/socio.csv'
 INTO TABLE socio
 FIELDS TERMINATED BY ','  
 LINES TERMINATED BY '\n' IGNORE 1 ROWS;
+
+select * from canal;
+select * from categoria;
+select * from cliente;
+select * from empleado;
+select * from producto;
+select * from proveedor;
+select * from sede;
+select * from socio;
+select * from ventas;
