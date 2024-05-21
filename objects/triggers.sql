@@ -25,3 +25,5 @@ set sql_safe_updates = 0 ;
 update cliente set correo_cliente = 'joana@live.com.ar' where correo_cliente like '%@live%';
 
 -- select * from cliente ;
+
+select * from ventas;
