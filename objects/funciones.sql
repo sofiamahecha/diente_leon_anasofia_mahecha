@@ -1,5 +1,5 @@
 use diente_leon;
-DELIMITER $$ 
+/*DELIMITER $$ 
 CREATE FUNCTION fn_nombre(parametro_nombre tipo_de_dato (longitud))
 returns tipo_de_dato
 deterministic/ no deterministic /no sql/ reads sql data 
@@ -7,7 +7,7 @@ begin
 declare nombre_variable tipo_de_dato;
 	SELECT nombre_columna into nombre_variable from nombre_tabla; 
 end $$
-DELIMITER ; 
+DELIMITER ; */
 DROP FUNCTION IF EXISTS fn_buscar_cliente;
 DELIMITER $$
 CREATE FUNCTION fn_buscar_cliente(p_id int)
@@ -54,4 +54,4 @@ begin
 end //
 delimiter ;
 
-SELECT fn_buscar_direccion(1) AS "direccion"
+SELECT fn_buscar_direccion(1) AS "direccion";
