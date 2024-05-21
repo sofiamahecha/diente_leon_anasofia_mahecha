@@ -4,92 +4,92 @@ CREATE DATABASE diente_leon ;
 USE diente_leon ; 
 
 CREATE TABLE ventas (
-  idVenta INT PRIMARY KEY AUTO_INCREMENT 
-, idCliente INT NOT NULL 
-, idSede INT NOT NULL 
-, idEmpleado INT NOT NULL 
-, idProducto INT NOT NULL 
-, idCanal INT NOT NULL 
+  idventa INT PRIMARY KEY AUTO_INCREMENT 
+, idcliente INT NOT NULL 
+, idsede INT NOT NULL 
+, idempleado INT NOT NULL 
+, idproducto INT NOT NULL 
+, idcanal INT NOT NULL 
 , fecha DATETIME NOT NULL
 , tipo_venta INT NOT NULL 
 );
 
 CREATE TABLE cliente (
- idCliente INT PRIMARY KEY AUTO_INCREMENT
+ idcliente INT PRIMARY KEY AUTO_INCREMENT
 , nombre_cliente VARCHAR (20)
 , telefono_cliente INT NOT NULL 
 , correo_cliente VARCHAR(20) UNIQUE
 );
 
 CREATE TABLE producto (
- idProducto INT PRIMARY KEY AUTO_INCREMENT
+ idproducto INT PRIMARY KEY AUTO_INCREMENT
 , nombre_producto VARCHAR(50) NOT NULL
 , coleccion VARCHAR(50) NOT NULL
 );
 
 CREATE TABLE canal (
- idCanal INT PRIMARY KEY AUTO_INCREMENT
-, idVenta INT NOT NULL 
+ idcanal INT PRIMARY KEY AUTO_INCREMENT
+, idventa INT NOT NULL 
 , tipo_canal VARCHAR(20)
 );
 
 CREATE TABLE empleado (
- idEmpleado INT PRIMARY KEY AUTO_INCREMENT
+ idempleado INT PRIMARY KEY AUTO_INCREMENT
 , nombre_empleado VARCHAR(20)
 , telefono_empleado VARCHAR (20)
 );
 
 CREATE TABLE sede (
- idSede INT PRIMARY KEY AUTO_INCREMENT
+ idsede INT PRIMARY KEY AUTO_INCREMENT
 , nombre_sede VARCHAR(20)
 , direccion VARCHAR(20)
 );
 
 CREATE TABLE socio (
- idSocio INT PRIMARY KEY AUTO_INCREMENT
-, idSede INT NOT NULL
+ idsocio INT PRIMARY KEY AUTO_INCREMENT
+, idsede INT NOT NULL
 , nombre_socio VARCHAR(20)
 );
 
 CREATE TABLE  proveedor (
- idProveedor INT PRIMARY KEY AUTO_INCREMENT
-, idProducto INT NOT NULL
+ idproveedor INT PRIMARY KEY AUTO_INCREMENT
+, idproducto INT NOT NULL
 , nombre_proveedor VARCHAR(20)
 );
 
 CREATE TABLE categoria (
-idCategoria INT PRIMARY KEY AUTO_INCREMENT
-, idProducto INT NOT NULL
+idcategoria INT PRIMARY KEY AUTO_INCREMENT
+, idproducto INT NOT NULL
 );
 
 ALTER TABLE ventas 
 ADD CONSTRAINT fk_ventas_cliente 
-	FOREIGN KEY (idCliente) REFERENCES cliente(idCliente);
+	FOREIGN KEY (idcliente) REFERENCES cliente(idcliente);
     
 ALTER TABLE ventas 
 ADD CONSTRAINT fk_ventas_empleado
-	FOREIGN KEY (idEmpleado) REFERENCES empleado(idEmpleado);
+	FOREIGN KEY (idempleado) REFERENCES empleado(idempleado);
     
 ALTER TABLE ventas 
 ADD CONSTRAINT fk_ventas_sede
-	FOREIGN KEY (idSede) REFERENCES sede(idSede);
+	FOREIGN KEY (idsede) REFERENCES sede(idsede);
     
 ALTER TABLE ventas 
 ADD CONSTRAINT fk_ventas_producto
-	FOREIGN KEY (idProducto) REFERENCES producto(idProducto);
+	FOREIGN KEY (idproducto) REFERENCES producto(idproducto);
     
 ALTER TABLE ventas 
 ADD CONSTRAINT fk_ventas_canal
-	FOREIGN KEY (idCanal) REFERENCES canal(idCanal);
+	FOREIGN KEY (idcanal) REFERENCES canal(idcanal);
     
-ALTER TABLE producto
+/*ALTER TABLE producto
 ADD CONSTRAINT fk_producto_categoria
-	FOREIGN KEY (idCategoria) REFERENCES producto(idCategoria);
-    
+	FOREIGN KEY (idcategoria) REFERENCES producto(idcategoria);
+  */  
 ALTER TABLE proveedor
 ADD CONSTRAINT fk_producto_proveedor
-	FOREIGN KEY (idProducto) REFERENCES producto(idProducto);
+	FOREIGN KEY (idproducto) REFERENCES producto(idproducto);
     
 ALTER TABLE socio
 ADD CONSTRAINT fk_sede_socio
-	FOREIGN KEY (idSocio) REFERENCES sede(idSocio);
+	FOREIGN KEY (idsede) REFERENCES sede(idsede);
