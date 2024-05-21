@@ -12,4 +12,4 @@ For each row
 Insert into log_audit(usuario,accion,fecha_accion, time_accion)
 values(current_user(),'insert', curdate(),now());
 
-insert into cliente values('joana', 1157894561,'joana@live.com');
+insert into cliente(nombre_cliente,telefono_cliente,correo_cliente) values('joana', 1157894561,'joana@live.com');
