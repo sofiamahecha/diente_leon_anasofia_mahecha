@@ -15,7 +15,7 @@ RETURNS varchar(50)
 DETERMINISTIC
 BEGIN
 	DECLARE nombre_cliente_variable varchar(50);
-		SELECT nombre_cliente INTO nombre_cliente_variable FROM cliente WHERE idCliente=p_id;
+		SELECT nombre_cliente INTO nombre_cliente_variable FROM cliente WHERE idcliente=p_id;
 RETURN nombre_cliente_variable;
 END $$
 DELIMITER ;
@@ -30,7 +30,7 @@ RETURNS int
 DETERMINISTIC
 BEGIN
 	DECLARE telefono_cliente_variable int;
-		SELECT telefono_cliente INTO telefono_cliente_variable FROM cliente WHERE idCliente=p_id;
+		SELECT telefono_cliente INTO telefono_cliente_variable FROM cliente WHERE idcliente=p_id;
 RETURN telefono_cliente_variable;
 END $$
 DELIMITER ;
@@ -49,7 +49,7 @@ begin
     declare param varchar(20);
     set param= concat('%', p_dato);
     
-		select direccion into dire from SEDE where direccion like param;
+		select direccion into dire from sede where direccion like param;
 	return dire;
 end //
 delimiter ;
