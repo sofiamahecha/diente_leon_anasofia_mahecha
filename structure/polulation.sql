@@ -1,3 +1,4 @@
+use diente_leon;
 SET GLOBAL local_infile = true;
 
 LOAD DATA LOCAL INFILE '/structure/data-csv/cliente.csv' 
