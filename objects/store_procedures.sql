@@ -1,3 +1,4 @@
+USE diente_leon ;
 DELIMITER //
 -- insertar un producto
 CREATE PROCEDURE InsertarProducto(
@@ -35,11 +36,11 @@ BEGIN
 
     
     -- mirar si existe el producto
-    SELECT COUNT(*) INTO product_exists
+    SELECT COUNT(*) INTO product_existe
     FROM producto
     WHERE idproducto = p_idproducto;
 
-    IF product_exists = 0 THEN
+    IF product_existe = 0 THEN
         SIGNAL SQLSTATE '45000'
         SET MESSAGE_TEXT = 'Product ID no existe';
     ELSE
