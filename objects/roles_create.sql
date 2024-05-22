@@ -1,3 +1,5 @@
+USE diente_leon;
+USE mysql;
 CREATE ROLE 'admin', 'lector', 'escritor';
 GRANT ALL ON diente_leon.* TO 'admin';
 GRANT SELECT ON diente_leon.* TO 'lector';
