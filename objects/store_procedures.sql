@@ -20,7 +20,10 @@ BEGIN
         SELECT LAST_INSERT_ID() AS idproducto;
     END IF;
 END //
-  
+DELIMITER ; 
+    CALL InsertarProducto("Producto 11","Coleccion 3");
+
+DELIMITER // 
 -- actualizar un producto
 CREATE PROCEDURE UpdateProducto(
     IN p_idproducto INT,
@@ -30,6 +33,7 @@ CREATE PROCEDURE UpdateProducto(
 BEGIN
     DECLARE product_existe INT;
 
+    
     -- mirar si existe el producto
     SELECT COUNT(*) INTO product_exists
     FROM producto
@@ -47,3 +51,6 @@ BEGIN
 END //
 
 DELIMITER ;
+CALL UpdateProducto(10,"Producto 11","Coleccion 4");
+
+
